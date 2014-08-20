@@ -48,7 +48,7 @@ body {
   display: block;
   width: 100%;
   position: fixed;
-  height: 60px;
+  height: 45px;
   z-index: 100;
 }
 .header-bar {
@@ -65,49 +65,47 @@ body {
 .header-bar .back-button {
   position: absolute;
   background: url('images/left-arrow.png') no-repeat;
-  background-size: 100%;
+  background-size: 90%;
   display: inline-block;
-  width: 27px;
-  height: 20px;
+  width: 24px;
+  height: 18px;
   text-decoration: none;
   left: 18px;
-  top: 20px;
+  top: 15px;
   cursor: pointer;
 }
 .header-bar h1 {
-  font: caption;
-  font-size: 1.4em;
+  font-size: 1em;
   padding: 4px;
   font-weight: normal;
 }
 .header-bar label {
-  font: small-caption;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: rgb(91, 91, 91);
 }
 .footer-bar input {
-  height: 50px;
-  font-size: 1.2em;
+  height: 32px;
+  font-size: 1em;
   padding: 5px;
   width: 100%;
 }
 .footer-bar .capture-image {
   position: absolute;
-  background: rgb(245, 245, 245) url('images/camera.png') 10px 15px no-repeat;
+  background: rgb(245, 245, 245) url('images/camera.png') 13px 10px no-repeat;
   border-left: 1px solid rgb(217, 217, 217);
-  background-size: 60%;
+  background-size: 50%;
   display: inline-block;
   width: 50px;
-  height: 60px;
+  height: 45px;
   text-decoration: none;
   right: 0px;
   top: 2px;
   cursor: pointer;
 }
 #main {
-  margin-top: 60px;
+  margin-top: 45px;
   padding-top: 5px;
-  height: 438px;
+  height: 468px;
   overflow: auto;
 }
 .list .item {
@@ -131,18 +129,20 @@ body {
   max-width: 20%;
   overflow: hidden;
   color: #fff;
+  font-size: 0.8em;
 }
 .list .item .message {
-  width: 65%;
+  width: 70%;
   padding: 10px;
   border-radius: 8px;
   position: relative;
-  margin-left: 20px;
+  margin-left: 15px;
   background-color: #fff;
-  line-height: 24px;
+  line-height: 20px;
   margin-bottom: 15px;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: normal;
+  color: rgb(109, 104, 104);
 }
 .list .item .message:after {
   content: '';
@@ -154,28 +154,33 @@ body {
   width: 0;
   z-index: 1;
   margin-top: -14px;
-  left: -15px;
+  left: -10px;
   top: 20px;
 }
 .list .item.reply .message {
   margin-left: 0px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 .list .item.reply .message:after {
   border-width: 14px 0 14px 19px;
   left: auto;
-  right: -15px;
+  right: -10px;
 }
 .list .item .message h1 {
   text-transform: uppercase;
   color: rgb(171, 171, 171);
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-size: 0.9em;
 }
 .list .item .message time {
   color: rgb(171, 171, 171);
   float: right;
  font-size: 0.8em;
+}
+.list .item .message .content
+{
+  font-size: 0.9em;
+  font-weight: normal;
 }
 .list .item .message img
 {
