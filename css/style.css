@@ -1,16 +1,4 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -18,26 +6,21 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
 }
-
 html {
   line-height: 1;
 }
-
 ol, ul {
   list-style: none;
 }
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
-
 q, blockquote {
   quotes: none;
 }
@@ -45,11 +28,181 @@ q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
-
 a img {
   border: none;
 }
-
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
+}
+@font-face {
+  font-family: 'Circular STD';
+  src: url('fonts/CircularStd-Medium.otf');
+}
+body {
+  background-color: rgb(237, 237, 237);
+  font-family: 'Circular STD', Verdana, Arial, sans-serif;
+  overflow: hidden;
+}
+.header-bar, .footer-bar {
+  background-color: rgb(245, 245, 245);
+  display: block;
+  width: 100%;
+  position: fixed;
+  height: 60px;
+  z-index: 100;
+}
+.header-bar {
+  top: 0px;
+  border-bottom: 2px solid rgb(217, 217, 217);
+  text-align: center;
+  box-shadow: 0px 0px 2px 0px rgb(217, 217, 217);
+}
+.footer-bar {
+  border-top: 2px solid rgb(217, 217, 217);
+  bottom: 0px;
+  box-shadow: 0px -2px 2px 0px rgb(217, 217, 217);
+}
+.header-bar .back-button {
+  position: absolute;
+  background: url('images/left-arrow.png') no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 27px;
+  height: 20px;
+  text-decoration: none;
+  left: 18px;
+  top: 20px;
+  cursor: pointer;
+}
+.header-bar h1 {
+  font: caption;
+  font-size: 1.4em;
+  padding: 4px;
+  font-weight: normal;
+}
+.header-bar label {
+  font: small-caption;
+  font-size: 0.9em;
+  color: rgb(91, 91, 91);
+}
+.footer-bar input {
+  height: 50px;
+  font-size: 1.2em;
+  padding: 5px;
+  width: 100%;
+}
+.footer-bar .capture-image {
+  position: absolute;
+  background: rgb(245, 245, 245) url('images/camera.png') 10px 15px no-repeat;
+  border-left: 1px solid rgb(217, 217, 217);
+  background-size: 60%;
+  display: inline-block;
+  width: 50px;
+  height: 60px;
+  text-decoration: none;
+  right: 0px;
+  top: 2px;
+  cursor: pointer;
+}
+#main {
+  margin-top: 60px;
+  padding-top: 5px;
+  height: 438px;
+  overflow: auto;
+}
+.list .item {
+  margin: 5px 0px 5px 0px;
+  clear: both;
+}
+.list .item .name, .list .item .message {
+  float: left;
+  margin-left: 10px;
+}
+.list .item.reply .name, .list .item.reply .message{
+  float: right;
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.list .item .name {
+  border-radius: 15px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  max-width: 20%;
+  overflow: hidden;
+  color: #fff;
+}
+.list .item .message {
+  width: 65%;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  margin-left: 20px;
+  background-color: #fff;
+  line-height: 24px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  font-weight: normal;
+}
+.list .item .message:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 14px 19px 14px 0;
+  border-color: transparent #fff;
+  display: block;
+  width: 0;
+  z-index: 1;
+  margin-top: -14px;
+  left: -15px;
+  top: 20px;
+}
+.list .item.reply .message {
+  margin-left: 0px;
+  margin-right: 20px;
+}
+.list .item.reply .message:after {
+  border-width: 14px 0 14px 19px;
+  left: auto;
+  right: -15px;
+}
+.list .item .message h1 {
+  text-transform: uppercase;
+  color: rgb(171, 171, 171);
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+.list .item .message time {
+  color: rgb(171, 171, 171);
+  float: right;
+ font-size: 0.8em;
+}
+.list .item .message img
+{
+  width: 100%;
+  margin: 5px;
+  border-radius: 5px;
+  max-width: 500px;
+  display: block;
+}
+.clearfix {
+  clear: both;
+}
+
+/*Temporary*/
+.mw
+{
+  background-color: rgb(213,132,109);
+}
+.jl
+{
+  background-color: rgb(142,110,194);
+}
+.gm
+{
+  background-color: rgb(134,160,192);
+}
+.vl
+{
+  background-color: rgb(124,186,135);
 }
